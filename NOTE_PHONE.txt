@@ -1,0 +1,15 @@
+The format for this dictionary format is:
+
+the    0.16      0.08    2.17    1.13    d i
+the    0.99      0.04    2.14    1.15    d ə
+the      0.01    0.14    2.48    1.18    ð i
+the      0.02    0.12    1.87    1.23    ð ə
+the      0.11    0.15    2.99    1.15    ə
+The first float column is the probability of the pronunciation,
+ the next float is the probability of silence following the pronunciation,
+  and the final two floats are correction terms for preceding silence and non-silence. 
+  Given that each entry in a dictionary is independent and there is no way to encode information about the preceding context, 
+  the correction terms are calculated as how much more common was silence or non-silence compared to what
+   we would expect factoring out the likelihood of silence from the previous word. More details are found in get_prons.sh and 
+   the related paper.
+
